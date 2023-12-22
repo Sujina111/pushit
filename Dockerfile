@@ -1,5 +1,6 @@
-From node
-workdir /app
-copy package.json index.js /app/
+FROM alpine
+RUN apk add --update nodejs npm
+WORKDIR /app
+COPY package.json index.js /app/
 RUN npm index
 CMD ["node", "index.js"]
